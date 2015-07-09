@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/wildeee/AngularLibs",
   "dependencies": {
+    "angular": "^1.4.2",
     "ascii-images": "^0.1.1",
+    "bootstrap": "^3.3.5",
     "express": "^4.13.1"
   }
 }

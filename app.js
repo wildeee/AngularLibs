@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var imageToAsciiConsole = require('ascii-images');
+require('./SampleApplication/router.js')(app, express);
 
 app.get('/', function(req, res){
 	res.sendFile(__dirname + '/SampleApplication/Index/index.html');
