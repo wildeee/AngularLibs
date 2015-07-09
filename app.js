@@ -5,7 +5,7 @@ var imageToAsciiConsole = require('ascii-images');
 require('./SampleApplication/router.js')(app, express);
 
 app.get('/', function(req, res){
-	res.sendFile(__dirname + '/SampleApplication/Index/index.html');
+	res.sendFile(__dirname + '/SampleApplication/HTML/index.html');
 });
 
 var port = 3000;
