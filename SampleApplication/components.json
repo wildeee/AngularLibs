@@ -1,12 +1,12 @@
 [
 	{
-		"title": "ErrorMessages",
+		"title": "Error Messages",
 		"description": "Componente para mensagens de erro.",
-		"target": "/ErrorMessages"
+		"htmlPage": "ErrorMessages.html"
 	},
 	{
 		"title": "Accordion Group", 
 		"description": "Componente para grupos de accordion.",
-		"target": "/AccordionGroup"
+		"htmlPage": "AccordionGroup.html"
 	}
 ]

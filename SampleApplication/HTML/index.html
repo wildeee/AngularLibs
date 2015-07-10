@@ -2,18 +2,21 @@
 <html ng-app="sample-application">
 <head>
 	<title>Sample Application</title>
+
+	<meta chatset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="/Bootstrap/dist/css/bootstrap.min.css">	
 	<script type="text/javascript" src="/Angular/angular.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/Style/common.css">
-	<link rel="stylesheet" type="text/css" href="/Style/index.css">
 	<script type="text/javascript" src="/JS/app.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/Style/index.css">
 	<script type="text/javascript" src="/JS/index.js"></script>
 </head>
 <body ng-controller="index-controller">
 	<div class="jumbotron">
 		<h3>Componentes:</h3>
 		<span ng-repeat="componente in componentes">
-			<div class="component" ng-click="sendRedirect(componente.target)">
+			<div class="component" ng-click="sendRedirect(componentes.indexOf(componente))">
 				<div class="title">{{componente.title}}</div>
 				{{componente.description}}
 			</div>

@@ -9,9 +9,7 @@ angular.module('sample-application').controller('index-controller', function($sc
 	_getComponentsDescription();
 
 	$scope.sendRedirect = function(target){
-		if (target){
-			$window.location.href = target;
-		}
+		$window.location.href += 'Component/' + target;
 	};
 });
 
