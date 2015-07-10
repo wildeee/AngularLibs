@@ -1,1 +1,1 @@
-angular.module('sample-application', []);
+angular.module('sample-application', ['messages']);

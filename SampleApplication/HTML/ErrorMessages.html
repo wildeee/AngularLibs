@@ -9,10 +9,17 @@
 	<script type="text/javascript" src="/JS/app.js"></script>
 	<script type="text/javascript" src="/JS/component-displayer.js"></script>
 	<link rel="stylesheet" type="text/css" href="/Style/component-displayer.css">
+
+	<script type="text/javascript" src="/JS/ErrorMessages.js"></script>
+
+	<script type="text/javascript" src="/LIB/Messages/Messages.js"></script>
+	<script type="text/javascript" src="/LIB/Messages/Error/ErrorMessages.js"></script>
+	<link rel="stylesheet" type="text/css" href="/LIB/Messages/Messages.css">
+	<link rel="stylesheet" type="text/css" href="/LIB/Messages/Error/ErrorMessages.css">
 </head>
-<body >
+<body ng-controller="sample-error">
 	<component-displayer title="info.title" description="info.description">
-		
+		<error-messages error-array="errors"></error-messages>
 	</component-displayer>
 </body>
 </html>

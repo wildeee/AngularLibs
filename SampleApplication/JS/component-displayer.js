@@ -8,7 +8,6 @@ angular.module('sample-application').controller('displayer', function($scope, $h
 	_getInfo();
 });
 
-
 angular.module('sample-application').directive('componentDisplayer', function(){
 	return {
 		templateUrl: '/ComponentDisplayer',

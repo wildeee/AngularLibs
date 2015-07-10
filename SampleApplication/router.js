@@ -3,6 +3,7 @@ module.exports = function(app, express) {
 	app.use('/Angular', express.static(__dirname + '/../node_modules/angular/'));
 	app.use('/Style', express.static(__dirname + '/Style/'));
 	app.use('/JS', express.static(__dirname + '/JS/'));
+	app.use('/LIB', express.static(__dirname + '/../CustomLibraries/'))
 
 
 	app.get('/componentes', function(req, res) {
@@ -32,6 +33,4 @@ module.exports = function(app, express) {
 	app.get('/ComponentDisplayer', function(req, res){
 		res.sendFile(__dirname + '/HTML/ComponentDisplayerTemplate.html');
 	});
-
-
 };
