@@ -1,6 +1,44 @@
-.message{
+.message {
 	position: fixed;
 	top: 0;
 	transform: translate(-50%, 0);
 	left: 50%;
+	margin-top: 10px;
+	max-width: 400px;
+	z-index: 1;
+	padding-right: 25px;
+	padding-top: 20px;
+}
+
+.message hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.message ul {
+	list-style-type: none;
+	padding-left: 10px;
+}
+
+.message li {
+	margin-bottom: 5px;
+}
+
+.message .glyphicon.glyphicon-remove {
+	position: relative;
+	display: inline-block;
+	float: right;
+	margin-right: -20px;
+	margin-top: -15px;
+	cursor: pointer;
+}
+
+.fadeIn {
+	transition: 0.5s linear all;
+	opacity: 1;
+}
+
+.fadeOut {
+	transition: 0.5s linear all;
+	opacity: 0;
 }

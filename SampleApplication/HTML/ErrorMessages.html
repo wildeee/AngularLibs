@@ -20,6 +20,13 @@
 <body ng-controller="sample-error">
 	<component-displayer title="info.title" description="info.description">
 		<error-messages error-array="errors"></error-messages>
+		<div style="width: 40%; margin: 0 auto;">
+			<input type="text" class="form-control" placeholder="Mensagem 1" style="margin-bottom: 5px;" ng-model="entity.message1" value=""/>
+			<input type="text" class="form-control" placeholder="Mensagem 2" style="margin-bottom: 5px;" ng-model="entity.message2" value=""/>
+			<input type="button" value="Faça-me uma mensagem de erro!" ng-click="addErrorMessage(entity)" class="btn btn-danger btn-block"/>
+		</div>
 	</component-displayer>
+
+
 </body>
 </html>
