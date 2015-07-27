@@ -1,9 +1,0 @@
-<div class="alert alert-danger message error-message" ng-class="visibleWindow ? 'fadeIn' : 'fadeOut'">
-	<span class="glyphicon glyphicon-remove" ng-click="close()"></span>
-	<div class="title" ng-if="errorArray.length === 1"><strong>Ops, aconteceu um erro: </strong></div>
-	<div class="title" ng-if="errorArray.length > 1"><strong>Ops, aconteceram alguns erros: </strong></div>
-	<hr/>
-	<ul ng-repeat="error in errorArray track by $index">
-		<li>{{error}}</li>
-	</ul>
-</div>
