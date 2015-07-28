@@ -13,14 +13,19 @@
 	<script type="text/javascript" src="/JS/ErrorMessages.js"></script>
 
 	<script type="text/javascript" src="/LIB/Messages/Messages.js"></script>
+	<!-- <script type="text/javascript" src="/TESTEEEEE/Messages.min.js"></script>-->
+
 </head>
 <body ng-controller="sample-error">
 	<component-displayer title="info.title" description="info.description">
-		<error-messages error-array="errors"></error-messages>
+		<message-container error-array="errors" alert-array="alerts" success-array="success"></message-container>
 		<div style="width: 40%; margin: 0 auto;">
 			<input type="text" class="form-control" placeholder="Mensagem 1" style="margin-bottom: 5px;" ng-model="entity.message1" value=""/>
 			<input type="text" class="form-control" placeholder="Mensagem 2" style="margin-bottom: 5px;" ng-model="entity.message2" value=""/>
 			<input type="button" value="Faça-me uma mensagem de erro!" ng-click="addErrorMessage(entity)" class="btn btn-danger btn-block"/>
+			<input type="button" value="Faça-me uma mensagem de alerta!" ng-click="addAlertMessage(entity)" class="btn btn-warning btn-block"/>
+			<input type="button" value="Faça-me uma mensagem de sucesso!" ng-click="addSuccessMessage(entity)" class="btn btn-success btn-block"/>
+			
 		</div>
 	</component-displayer>
 

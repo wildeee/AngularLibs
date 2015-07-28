@@ -1,4 +1,8 @@
-.message {
+.title {
+	font-weight: bold;
+}
+
+.message-container {
 	position: fixed;
 	top: 0;
 	transform: translate(-50%, 0);
@@ -8,6 +12,7 @@
 	z-index: 1;
 	padding-right: 25px;
 	padding-top: 20px;
+	width: 400px;
 }
 
 .message hr {
@@ -28,17 +33,7 @@
 	position: relative;
 	display: inline-block;
 	float: right;
-	margin-right: -20px;
-	margin-top: -15px;
+	margin-right: -10px;
+	margin-top: -10px;
 	cursor: pointer;
-}
-
-.fadeIn {
-	transition: 0.5s linear all;
-	opacity: 1;
-}
-
-.fadeOut {
-	transition: 0.5s linear all;
-	opacity: 0;
 }

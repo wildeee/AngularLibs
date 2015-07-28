@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="/LIB/Messages/Messages.css">
+<div class="message-container">	
+	<div class="alert alert-danger message my-fade" ng-show="errorArray.length > 0">
+		<span class="glyphicon glyphicon-remove" ng-click="close(&quot;error&quot;)"></span>
+		<div class="title" ng-if="errorArray.length === 1">Ops, aconteceu um erro: </div>
+		<div class="title" ng-if="errorArray.length > 1">Ops, aconteceram alguns erros: </div>
+		<hr/>
+		<ul ng-repeat="error in errorArray track by $index">
+			<li>{{error}}</li>
+		</ul>
+	</div>
+	<div class="alert alert-warning message my-fade" ng-show="alertArray.length > 0">
+		<span class="glyphicon glyphicon-remove" ng-click="close(&quot;alert&quot;)"></span>
+		<div class="title" ng-if="alertArray.length > 0">Atenção: </div>
+		<hr/>
+		<ul ng-repeat="alert in alertArray track by $index">
+			<li>{{alert}}</li>
+		</ul>
+	</div>
+	<div class="alert alert-success message my-fade" ng-show="successArray.length > 0">
+		<span class="glyphicon glyphicon-remove" ng-click="close(&quot;success&quot;)"></span>
+		<div class="title" ng-if="successArray.length > 0">Sucesso: </div>
+		<hr/>
+		<ul ng-repeat="success in successArray track by $index">
+			<li class="my-fade">{{success}}</li>
+		</ul>
+	</div>
+</div>
