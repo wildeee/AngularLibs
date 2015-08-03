@@ -2,7 +2,7 @@ angular.module('accordiongroups', []);
 
 angular.module('accordiongroups').directive('accordionGroup', function(){
 	return {
- 		controller: function($scope, $element, $attrs){
+ 		controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs){
  			var _accordions = [];
 
  			this.registerAccordion = function(accordion){
@@ -14,7 +14,7 @@ angular.module('accordiongroups').directive('accordionGroup', function(){
  					accordion.isOpened = false;
  				});
  			};
- 		}
+ 		}]
 	};
 });
 
