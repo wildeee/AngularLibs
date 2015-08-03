@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/Style/common.css">
 	<script type="text/javascript" src="/JS/app.js"></script>
 	<script type="text/javascript" src="/LIB/Messages/Messages.js"></script>
+	<script type="text/javascript" src="/LIB/AccordionGroup/AccordionGroup.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/Style/index.css">
 	<script type="text/javascript" src="/JS/index.js"></script>
@@ -16,10 +17,12 @@
 <body ng-controller="index-controller">
 	<div class="jumbotron">
 		<h3>Componentes:</h3>
-		<div ng-repeat="componente in componentes">
-			<div class="component" ng-click="sendRedirect(componentes.indexOf(componente))">
-				<div class="title">{{componente.title}}</div>
-				{{componente.description}}
+		<div class="componentWrapper">
+			<div ng-repeat="componente in componentes">
+				<div class="component" ng-click="sendRedirect(componentes.indexOf(componente))">
+					<div class="title">{{componente.title}}</div>
+					<p class="component-description">{{componente.description}}</p>
+				</div>
 			</div>
 		</div>
 	</div>

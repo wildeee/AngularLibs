@@ -6,7 +6,7 @@ module.exports = function(app, express) {
 	app.use('/LIB', express.static(__dirname + '/../CustomLibraries/'));
 
 
-	app.use('/TESTEEEEE', express.static(__dirname + '/../build/'));
+	app.use('/MIN', express.static(__dirname + '/../build/'));
 
 
 	app.get('/componentes', function(req, res) {

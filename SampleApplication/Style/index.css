@@ -4,23 +4,32 @@ div.jumbotron h3 {
 	margin-bottom: 50px;
 }
 
+div.jumbotron .componentWrapper{
+	overflow: hidden;
+	position: relative;
+}
+
 div.jumbotron .component {
 	background-color: #C5C5C5;
 	width: 200px;
 	height: 200px;
 	border-radius: 8px;
 	padding: 10px;	
-	margin-right: 13px;
+	margin: 5px;
 	display: inline-block;
-	position: relative;
+	float: left;
 }
 
 div.jumbotron .component:hover {
-	box-shadow: 0 0 20px #000000;
+	box-shadow: 0 0 10px #000000;
 }
 
 div.jumbotron .component .title {
 	font-size: 20px;
 	text-align: center;
 	margin-bottom: 10px;
+}
+
+.component .component-description {
+	font-size: 15px;
 }

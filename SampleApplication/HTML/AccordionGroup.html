@@ -9,10 +9,34 @@
 	<script type="text/javascript" src="/JS/app.js"></script>
 	<script type="text/javascript" src="/JS/component-displayer.js"></script>
 	<link rel="stylesheet" type="text/css" href="/Style/component-displayer.css">
+	<script type="text/javascript" src="/MIN/Messages.min.js"></script>
+
+	<script type="text/javascript" src="/LIB/AccordionGroup/AccordionGroup.js"></script>
+
 </head>
-<body >
+<body>
 	<component-displayer title="info.title" description="info.description">
-		
+		<accordion-group>
+			<accordion title="Accordion número 1">
+				Aqui vem o conteúdo desse accordion :D
+			</accordion>
+			<accordion title="Somente um pode ficar aberto!">
+				Sim, se você está vendo esse accordion, todos os outros certamente já estão fechados!
+			</accordion>
+			<accordion title="No conteúdo deles...">
+				...Pode ter de tudo.
+			</accordion>
+			<accordion title="Tudinho">
+				<h1>Sim, tudo mesmo!</h1>
+			</accordion>
+			<accordion title="Não to brincando!">
+				<input type="text" placeholder="Até campo de input pode ter =]" class="form-control" />
+			</accordion>
+			<accordion title="Nossa!">
+				<p>Até textarea pode!</p>
+				<textarea class="form-control"></textarea>
+			</accordion>
+		</accordion-group>
 	</component-displayer>
 </body>
 </html>
