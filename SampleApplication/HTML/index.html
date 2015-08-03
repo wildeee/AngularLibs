@@ -16,12 +16,12 @@
 <body ng-controller="index-controller">
 	<div class="jumbotron">
 		<h3>Componentes:</h3>
-		<span ng-repeat="componente in componentes">
+		<div ng-repeat="componente in componentes">
 			<div class="component" ng-click="sendRedirect(componentes.indexOf(componente))">
 				<div class="title">{{componente.title}}</div>
 				{{componente.description}}
 			</div>
-		</span>
+		</div>
 	</div>
 </body>
 </html>
