@@ -19,8 +19,8 @@ module.exports = function(grunt) {
             replacement: 'template'
           },
           {
-            pattern: '/LIB/Messages/ErrorMessages.html',
-            replacement: '<style><%= grunt.file.read("CustomLibraries/Messages/Messages.css") %></style><%= grunt.file.read("CustomLibraries/Messages/ErrorMessages.html") %>'
+            pattern: '/LIB/Messages/Messages.html',
+            replacement: '<style><%= grunt.file.read("CustomLibraries/Messages/Messages.css") %></style><%= grunt.file.read("CustomLibraries/Messages/Messages.html") %>'
           },
           {
             pattern: '<link rel="stylesheet" type="text/css" href="/LIB/Messages/Messages.css">',

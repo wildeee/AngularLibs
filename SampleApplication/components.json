@@ -1,8 +1,8 @@
 [
 	{
-		"title": "Error Messages",
-		"description": "Componente para mensagens de erro.",
-		"htmlPage": "ErrorMessages.html"
+		"title": "Messages",
+		"description": "Componente para mensagens de erro, alerta e sucesso!",
+		"htmlPage": "Messages.html"
 	},
 	{
 		"title": "Accordion Group", 
