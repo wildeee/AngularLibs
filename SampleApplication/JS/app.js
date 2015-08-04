@@ -1,1 +1,1 @@
-angular.module('sample-application', ['messages', 'accordiongroups']);
+angular.module('sample-application', ['messages', 'accordiongroups', 'masks']);

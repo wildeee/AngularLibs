@@ -13,3 +13,8 @@ div.jumbotron {
 	margin: 0;
 	background-color: #FFFFFF;
 }
+
+label {
+	margin-top: 5px;
+	margin-bottom: 0;
+}

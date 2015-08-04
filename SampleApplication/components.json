@@ -8,5 +8,10 @@
 		"title": "Accordion Group", 
 		"description": "Componente para grupos de accordion.",
 		"htmlPage": "AccordionGroup.html"
+	},
+	{
+		"title": "Masks", 
+		"description": "Máscaras para os campos mais utilizados.",
+		"htmlPage": "Masks.html"
 	}
 ]
