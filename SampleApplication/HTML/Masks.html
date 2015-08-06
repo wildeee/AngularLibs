@@ -13,8 +13,8 @@
 	<script type="text/javascript" src="/MIN/AccordionGroup.min.js"></script>
 	<script type="text/javascript" src="/JS/Masks.js"></script>
 
-	<!--<script type="text/javascript" src="/LIB/Masks/Masks.js"></script>-->
-	<script type="text/javascript" src="/MIN/Masks.min.js"></script>
+	<script type="text/javascript" src="/LIB/Masks/Masks.js"></script>
+	<!--<script type="text/javascript" src="/MIN/Masks.min.js"></script>-->
 
 
 </head>
@@ -23,12 +23,27 @@
 		<div style="width: 200px; margin: 0 auto;">
 			<label>Telefone:</label>
 			<input type="text" placeholder="ex: +55 (44) 9999-9999" class="form-control" ng-model="phone" phone-mask/>
+			<p ng-show="phone">Valor amarrado ao Telefone: {{phone}}</p>
 			<label>CPF:</label>
 			<input type="text" placeholder="ex: 313.052.459-20" class="form-control" ng-model="cpf" cpf-mask/>
+			<p ng-show="cpf">Valor amarrado ao CPF: {{cpf}}</p>
 			<label>CNPJ:</label>
 			<input type="text" placeholder="ex: 28.405.823/0001-16" class="form-control" ng-model="cnpj" cnpj-mask/>
+			<p ng-show="cnpj">Valor amarrado ao CNPJ: {{cnpj}}</p>
 			<label>CPF / CNPJ:</label>
 			<input type="text" placeholder="Insira o CPF ou CNPJ aqui" class="form-control" ng-model="cpfCnpj" cpf-cnpj-mask/>
+			<p ng-show="cpfCnpj">Valor amarrado ao CPF / CNPJ: {{cpfCnpj}}</p>
+			<label>Tipo de máscara de data:</label>
+			<select class="form-control" style="margin-bottom: 8px;" ng-model="dateMaskFormat">
+				<option value="">Selecione um formato</option>
+				<option value="DD/MM/AAAA">DD/MM/AAAA</option>
+				<option value="DD/MM/AAAA HH:MM">DD/MM/AAAA HH:MM</option>
+				<option value="DD/MM/AAAA HH:MM:SS">DD/MM/AAAA HH:MM:SS</option>
+				<option value="formato_nao_suportado">Formato não suportado. Adotar default DD/MM/AAAA</option>
+			</select>
+			<label>Data: </label>
+			<input type="text" placeholder="ex: 18/10/1994" class="form-control" ng-model="date" date-mask date-mask-format="dateMaskFormat"/>
+			<p ng-show="date">Valor amarrado à data: {{date}}</p>
 			
 		</div>
 	</component-displayer>
