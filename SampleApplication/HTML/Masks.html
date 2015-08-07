@@ -13,8 +13,8 @@
 	<script type="text/javascript" src="/MIN/AccordionGroup.min.js"></script>
 	<script type="text/javascript" src="/JS/Masks.js"></script>
 
-	<script type="text/javascript" src="/LIB/Masks/Masks.js"></script>
-	<!--<script type="text/javascript" src="/MIN/Masks.min.js"></script>-->
+	<!--<script type="text/javascript" src="/LIB/Masks/Masks.js"></script>-->
+	<script type="text/javascript" src="/MIN/Masks.min.js"></script>
 
 
 </head>
@@ -23,38 +23,38 @@
 		<div style="width: 300px; margin: 0 auto;">
 			<label>Telefone:</label>
 			<input type="text" placeholder="ex: +55 (44) 9999-9999" class="form-control" ng-model="phone" phone-mask/>
-			<p ng-show="phone">Valor amarrado ao Telefone: {{phone}}</p>
+			<p ng-show="phone && showBind">Valor amarrado ao Telefone: {{phone}}</p>
 
 			<label>CPF:</label>
 			<input type="text" placeholder="ex: 313.052.459-20" class="form-control" ng-model="cpf" cpf-mask/>
-			<p ng-show="cpf">Valor amarrado ao CPF: {{cpf}}</p>
+			<p ng-show="cpf && showBind">Valor amarrado ao CPF: {{cpf}}</p>
 
 			<label>CNPJ:</label>
 			<input type="text" placeholder="ex: 28.405.823/0001-16" class="form-control" ng-model="cnpj" cnpj-mask/>
-			<p ng-show="cnpj">Valor amarrado ao CNPJ: {{cnpj}}</p>
+			<p ng-show="cnpj && showBind">Valor amarrado ao CNPJ: {{cnpj}}</p>
 
 			<label>CPF / CNPJ:</label>
 			<input type="text" placeholder="Insira o CPF ou CNPJ aqui" class="form-control" ng-model="cpfCnpj" cpf-cnpj-mask/>
-			<p ng-show="cpfCnpj">Valor amarrado ao CPF / CNPJ: {{cpfCnpj}}</p>
+			<p ng-show="cpfCnpj && showBind">Valor amarrado ao CPF / CNPJ: {{cpfCnpj}}</p>
 
 			<div style="border-style: solid; margin: 10px; padding: 5px;">
 				<label>DD/MM/AAAA </label>
 				<input type="text" placeholder="ex: 18/10/1994" class="form-control" ng-model="date1" date-mask date-mask-format="DD/MM/AAAA"/>
-				<p ng-show="date1">Valor amarrado à data: {{date1}}</p>
+				<p ng-show="date1 && showBind">Valor amarrado à data: {{date1}}</p>
 				<label>DD/MM/AAAA HH:MM </label>
 				<input type="text" placeholder="ex: 18/10/1994 45:15" class="form-control" ng-model="date2" date-mask date-mask-format="DD/MM/AAAA HH:MM"/>
-				<p ng-show="date2">Valor amarrado à data: {{date2}}</p>
+				<p ng-show="date2 && showBind">Valor amarrado à data: {{date2}}</p>
 				<label>DD/MM/AAAA HH:MM:SS </label>
 				<input type="text" placeholder="ex: 18/10/1994 45:15:23" class="form-control" ng-model="date3" date-mask date-mask-format="DD/MM/AAAA HH:MM:SS"/>
-				<p ng-show="date3">Valor amarrado à data: {{date3}}</p>
+				<p ng-show="date3 && showBind">Valor amarrado à data: {{date3}}</p>
 				<label>Formato inválido (default: DD/MM/AAAA) </label>
 				<input type="text" placeholder="ex: 18/10/1994" class="form-control" ng-model="date4" date-mask date-mask-format="Formato inválido"/>
-				<p ng-show="date4">Valor amarrado à data: {{date4}}</p>
+				<p ng-show="date4 && showBind">Valor amarrado à data: {{date4}}</p>
 			</div>
 
 			<label>Valor (limitado a 9.999.999.999.999,99): </label>
 			<input type="text" placeholder="ex: 5.520,00" ng-model="money" class="form-control" money-mask />
-			<p ng-show="money">Valor amarrado ao dinheiro: {{money}}</p>
+			<p ng-show="money && showBind">Valor amarrado ao dinheiro: {{money}}</p>
 
 			<label>Inscrição Estadual: </label>
 			<select ng-model="opcoesEstado" class="form-control">
@@ -88,10 +88,13 @@
 				<option value="TO">Tocantins</option>
 			</select>
 			<input type="text" ng-model="inscricaoEstadual" inscricao-estadual-mask estado="opcoesEstado" class="form-control" />
-			<p ng-show="inscricaoEstadual">Valor amarrado à inscrição estadual: {{opcoesEstado}} {{inscricaoEstadual}}</p>
+			<p ng-show="inscricaoEstadual && showBind">Valor amarrado à inscrição estadual: {{opcoesEstado}} {{inscricaoEstadual}}</p>
 
+			<label>CEP: </label>
+			<input type="text" placeholder="ex: 87.030-240" ng-model="cep" class="form-control" cep-mask />
+			<p ng-show="cep && showBind">Valor amarrado ao cep: {{cep}}</p>
 
-			
+			<input type="button" class="btn btn-primary btn-block" value="Mostrar valores vinculados" ng-model="showBind" ng-click="showBindToggle(showBind)" style="margin-top: 8px;" />			
 		</div>
 	</component-displayer>
 </body>

@@ -50,9 +50,11 @@ angular.module('masks').directive('phoneMask', ['$maskService', function($maskSe
 				}
 			});
 
-			// ctrl.$formatters.push(function(value){
-				
-			// });
+			ctrl.$formatters.push(function(value){
+				if (value){					
+					return _format($maskService.numbersOnly(value));
+				}
+			});
 		}
 	};
 }]);
@@ -96,6 +98,12 @@ angular.module('masks').directive('cpfMask', ['$maskService', function($maskServ
 
 				if (numbers.length === 11){
 					return numbers;
+				}
+			});
+
+			ctrl.$formatters.push(function(value){
+				if (value){					
+					return _format($maskService.numbersOnly(value));
 				}
 			});
 		}
@@ -146,6 +154,12 @@ angular.module('masks').directive('cnpjMask', ['$maskService', function($maskSer
 				var numbers = $maskService.numbersOnly(value);
 				if (numbers.length === 14){
 					return numbers;
+				}
+			});
+
+			ctrl.$formatters.push(function(value){
+				if (value){					
+					return _format($maskService.numbersOnly(value));
 				}
 			});
 		}
@@ -203,6 +217,12 @@ angular.module('masks').directive('cpfCnpjMask', ['$maskService', function($mask
 				var numbers = $maskService.numbersOnly(value);
 				if (numbers.length === 11 || numbers.length === 14){
 					return numbers;
+				}
+			});
+
+			ctrl.$formatters.push(function(value){
+				if (value){					
+					return _format(value, $maskService.numbersOnly);
 				}
 			});
 		}
@@ -316,6 +336,30 @@ angular.module('masks').directive('dateMask', ['$maskService', function($maskSer
 				}
 			});
 
+			ctrl.$formatters.push(function(value){
+				if (value){	
+					var data = new Date(value);				
+					switch (scope.dateMaskFormat){
+						case 'DD/MM/AAAA HH:MM':							
+							return (data.getDate() < 10 ? '0' + (data.getDate()) : data.getDate()) + '/' 
+							+ (data.getMonth() + 1 < 10 ? '0' + (data.getMonth() + 1) : data.getMonth() + 1) + '/' 
+							+ data.getFullYear() + ' ' 
+							+ (data.getHours() < 10 ? '0' + (data.getHours()) : data.getHours()) + ':' 
+							+ (data.getMinutes() < 10 ? '0' + (data.getMinutes()) : data.getMinutes());
+						case 'DD/MM/AAAA HH:MM:SS':
+							return (data.getDate() < 10 ? '0' + (data.getDate()) : data.getDate()) + '/' 
+							+ (data.getMonth() + 1 < 10 ? '0' + (data.getMonth() + 1) : data.getMonth() + 1) + '/' 
+							+ data.getFullYear() + ' ' 
+							+ (data.getHours() < 10 ? '0' + (data.getHours()) : data.getHours()) + ':' 
+							+ (data.getMinutes() < 10 ? '0' + (data.getMinutes()) : data.getMinutes()) + ':'
+							+ (data.getSeconds() < 10 ? '0' + (data.getSeconds()) : data.getSeconds());
+						default:
+							return (data.getDate() < 10 ? '0' + (data.getDate()) : data.getDate()) + '/' 
+							+ (data.getMonth() + 1 < 10 ? '0' + (data.getMonth() + 1) : data.getMonth() + 1) + '/' 
+							+ data.getFullYear();
+					}
+				}
+			});
 		}
 	};
 }]);
@@ -374,6 +418,12 @@ angular.module('masks').directive('moneyMask', ['$maskService', function($maskSe
 						ret = ret.substring(0, ret.length - 2) + '.' + ret.substring(ret.length - 2);
 					}
 					return parseFloat(ret);
+				}
+			});
+
+			ctrl.$formatters.push(function(value){
+				if (value){					
+					return _format(value.toFixed(2).replace('.', ''));
 				}
 			});
 		}
@@ -758,6 +808,59 @@ angular.module('masks').directive('inscricaoEstadualMask', ['$maskService', func
 					return numbers;
 				}
 				return value;
+			});
+
+			ctrl.$formatters.push(function(value){
+				if (value){					
+					return _format(value, scope.estado);
+				}
+			});
+		}
+	};
+}]);
+
+angular.module('masks').directive('cepMask', ['$maskService', function($maskService){
+	return {
+		require: 'ngModel',
+		restrict: 'A',
+		link: function(scope, element, attrs, ctrl){
+			var _format = function(unformatted){
+				var formatted = unformatted;
+				if (formatted.length > 2){
+					formatted = formatted.substring(0, 2) + '.' + formatted.substring(2);
+				}
+
+				if (formatted.length > 6){
+					formatted = formatted.substring(0, 6) + '-' + formatted.substring(6);
+				}
+
+				if (formatted.length > 10){
+					formatted = formatted.substring(0, 10);
+				}
+
+				return formatted;
+			};
+			element.on('keyup', function(key){
+				if (key.keyCode !== 9){
+					var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
+					var _formatted = _format(_toFormat);
+					ctrl.$setViewValue(_formatted);
+					ctrl.$render();
+				}
+			});
+
+			ctrl.$parsers.push(function(value){
+				var numbers = $maskService.numbersOnly(value);
+
+				if (numbers.length === 8){
+					return numbers;
+				}
+			});
+
+			ctrl.$formatters.push(function(value){
+				if (value){					
+					return _format($maskService.numbersOnly(value));
+				}
 			});
 		}
 	};
