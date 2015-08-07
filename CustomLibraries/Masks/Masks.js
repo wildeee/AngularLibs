@@ -2,6 +2,7 @@ angular.module('masks', []);
 
 angular.module('masks').service('$maskService', function(){
 	this.numbersOnly = function(strValue){
+
 		return strValue.replace(/[^0-9]+/g, '');
 	};
 });
@@ -33,11 +34,13 @@ angular.module('masks').directive('phoneMask', ['$maskService', function($maskSe
 
 				return formatted;
 			};
-			element.on('keyup', function(){
-				var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
-				var _formatted = _format(_toFormat);
-				ctrl.$setViewValue(_formatted);
-				ctrl.$render();
+			element.on('keyup', function(key){
+				if (key.keyCode !== 9){
+					var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
+					var _formatted = _format(_toFormat);
+					ctrl.$setViewValue(_formatted);
+					ctrl.$render();
+				}
 			});
 
 			ctrl.$parsers.push(function(value){
@@ -46,6 +49,10 @@ angular.module('masks').directive('phoneMask', ['$maskService', function($maskSe
 					return numbers;
 				}
 			});
+
+			// ctrl.$formatters.push(function(value){
+				
+			// });
 		}
 	};
 }]);
@@ -75,11 +82,13 @@ angular.module('masks').directive('cpfMask', ['$maskService', function($maskServ
 
 				return formatted;
 			};
-			element.on('keyup', function(){
-				var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
-				var _formatted = _format(_toFormat);
-				ctrl.$setViewValue(_formatted);
-				ctrl.$render();
+			element.on('keyup', function(key){
+				if (key.keyCode !== 9){
+					var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
+					var _formatted = _format(_toFormat);
+					ctrl.$setViewValue(_formatted);
+					ctrl.$render();
+				}
 			});
 
 			ctrl.$parsers.push(function(value){
@@ -124,11 +133,13 @@ angular.module('masks').directive('cnpjMask', ['$maskService', function($maskSer
 
 				return formatted;
 			};
-			element.on('keyup', function(){
-				var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
-				var _formatted = _format(_toFormat);
-				ctrl.$setViewValue(_formatted);
-				ctrl.$render();
+			element.on('keyup', function(key){
+				if (key.keyCode !== 9){
+					var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
+					var _formatted = _format(_toFormat);
+					ctrl.$setViewValue(_formatted);
+					ctrl.$render();
+				}
 			});
 
 			ctrl.$parsers.push(function(value){
@@ -180,10 +191,12 @@ angular.module('masks').directive('cpfCnpjMask', ['$maskService', function($mask
 
 				return formatted;
 			};
-			element.on('keyup', function(){
-				var _formatted = _format(ctrl.$viewValue, $maskService.numbersOnly);
-				ctrl.$setViewValue(_formatted);
-				ctrl.$render();
+			element.on('keyup', function(key){
+				if (key.keyCode !== 9){
+					var _formatted = _format(ctrl.$viewValue, $maskService.numbersOnly);
+					ctrl.$setViewValue(_formatted);
+					ctrl.$render();
+				}
 			});
 
 			ctrl.$parsers.push(function(value){
@@ -265,11 +278,13 @@ angular.module('masks').directive('dateMask', ['$maskService', function($maskSer
 				return formatted;
 			};
 
-			element.on('keyup', function(){
-				var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
-				var _formatted = _format(_toFormat, scope.dateMaskFormat);
-				ctrl.$setViewValue(_formatted);
-				ctrl.$render();
+			element.on('keyup', function(key){
+				if (key.keyCode !== 9){
+					var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
+					var _formatted = _format(_toFormat, scope.dateMaskFormat);
+					ctrl.$setViewValue(_formatted);
+					ctrl.$render();
+				}
 			});
 
 			ctrl.$parsers.push(function(value){
@@ -343,11 +358,13 @@ angular.module('masks').directive('moneyMask', ['$maskService', function($maskSe
 
 				return formatted;
 			};
-			element.on('keyup', function(){
-				var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
-				var _formatted = _format(_toFormat);
-				ctrl.$setViewValue(_formatted);
-				ctrl.$render();
+			element.on('keyup', function(key){
+				if (key.keyCode !== 9){
+					var _toFormat = $maskService.numbersOnly(ctrl.$viewValue);
+					var _formatted = _format(_toFormat);
+					ctrl.$setViewValue(_formatted);
+					ctrl.$render();
+				}
 			});
 
 			ctrl.$parsers.push(function(value){
@@ -538,7 +555,7 @@ angular.module('masks').directive('inscricaoEstadualMask', ['$maskService', func
 							formatted = formatted.substring(0, 16);
 						}
 						break;
-					case 'PA':					
+					case 'PA':
 						//15-663922-0
 						//23-123123-1
 						//15-056456-2
@@ -725,11 +742,13 @@ angular.module('masks').directive('inscricaoEstadualMask', ['$maskService', func
 
 				return formatted;
 			};
-			element.on('keyup', function(){
-				if (scope.estado){
-					var _formatted = _format(ctrl.$viewValue, scope.estado);
-					ctrl.$setViewValue(_formatted);
-					ctrl.$render();
+			element.on('keyup', function(key){
+				if (key.keyCode !== 9) {
+					if (scope.estado) {
+						var _formatted = _format(ctrl.$viewValue, scope.estado);
+						ctrl.$setViewValue(_formatted);
+						ctrl.$render();
+					}
 				}
 			});
 
