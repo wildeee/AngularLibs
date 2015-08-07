@@ -18,3 +18,7 @@ label {
 	margin-top: 5px;
 	margin-bottom: 0;
 }
+
+select.form-control {
+	margin-bottom: 8px;
+}
