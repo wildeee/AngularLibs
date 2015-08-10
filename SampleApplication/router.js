@@ -4,6 +4,7 @@ module.exports = function(app, express) {
 	app.use('/Style', express.static(__dirname + '/Style/'));
 	app.use('/JS', express.static(__dirname + '/JS/'));
 	app.use('/LIB', express.static(__dirname + '/../CustomLibraries/'));
+	app.use('/ANIMATE', express.static(__dirname + '/../node_modules/angular-animate/'));
 
 
 	app.use('/MIN', express.static(__dirname + '/../build/'));

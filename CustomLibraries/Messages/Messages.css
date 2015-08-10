@@ -29,6 +29,10 @@
 	margin-bottom: 5px;
 }
 
+.message {
+	transition: all 1s linear;
+}
+
 .message .glyphicon.glyphicon-remove {
 	position: relative;
 	display: inline-block;
@@ -36,4 +40,15 @@
 	margin-right: -10px;
 	margin-top: -10px;
 	cursor: pointer;
+}
+
+.message.ng-hide-add{
+	transition: all 1s linear;
+  	opacity: 0;
+}
+
+.message.ng-hide-remove {
+	transition: all 1s linear;
+  	opacity: 1;
+  	display: block !important;
 }

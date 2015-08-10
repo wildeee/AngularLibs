@@ -2,7 +2,6 @@ angular.module('masks', []);
 
 angular.module('masks').service('$maskService', function(){
 	this.numbersOnly = function(strValue){
-
 		return strValue.replace(/[^0-9]+/g, '');
 	};
 });

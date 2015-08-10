@@ -11,35 +11,27 @@
 	<script type="text/javascript" src="/JS/component-displayer.js"></script>
 	<link rel="stylesheet" type="text/css" href="/Style/component-displayer.css">
 	<script type="text/javascript" src="/MIN/Messages.min.js"></script>
-	<script type="text/javascript" src="/MIN/Masks.min.js"></script>
-	<script type="text/javascript" src="/MIN/Validators.min.js"></script>
-
 	<script type="text/javascript" src="/MIN/AccordionGroup.min.js"></script>
+	<script type="text/javascript" src="/MIN/Masks.min.js"></script>
+
+	<!--<script type="text/javascript" src="/LIB/Validators/Validators.js"></script>-->
+
+	<script type="text/javascript" src="/MIN/Validators.min.js"></script>
+	<script type="text/javascript" src="/JS/Validators.js"></script>
 
 </head>
-<body>
+<body ng-controller="sample-validator">
 	<component-displayer title="info.title" description="info.description">
-		<accordion-group>
-			<accordion title="Accordion número 1">
-				Aqui vem o conteúdo desse accordion :D
-			</accordion>
-			<accordion title="Somente um pode ficar aberto!">
-				Sim, se você está vendo esse accordion, todos os outros certamente já estão fechados!
-			</accordion>
-			<accordion title="No conteúdo deles...">
-				...Pode ter de tudo.
-			</accordion>
-			<accordion title="Tudinho">
-				<h1>Sim, tudo mesmo!</h1>
-			</accordion>
-			<accordion title="Não to brincando!">
-				<input type="text" placeholder="Até campo de input pode ter =]" class="form-control" />
-			</accordion>
-			<accordion title="Nossa!">
-				<p>Até textarea pode!</p>
-				<textarea class="form-control"></textarea>
-			</accordion>
-		</accordion-group>
+		<message-container error-array="errors" success-array="success" success-timeout="5000"></message-container>
+		<div style="width: 300px; margin: 0 auto;">
+			
+		<input type="text" class="form-control" ng-model="cpf" placeholder="CPF" cpf-mask/>
+		<input type="button" class="btn btn-primary btn-block" value="Validar CPF." ng-click="validateCpf(cpf)"/>
+
+		<input type="text" class="form-control" ng-model="cnpj" placeholder="CNPJ" cnpj-mask/>
+		<input type="button" class="btn btn-primary btn-block" value="Validar CNPJ." ng-click="validateCnpj(cnpj)"/>
+
+		</div>
 	</component-displayer>
 </body>
 </html>

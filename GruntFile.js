@@ -6,7 +6,8 @@ module.exports = function(grunt) {
         files: {
           'build/Messages.min.js': 'temp1/CustomLibraries/Messages/Messages.js',
           'build/AccordionGroup.min.js': 'temp1/CustomLibraries/AccordionGroup/AccordionGroup.js',
-          'build/Masks.min.js': 'CustomLibraries/Masks/Masks.js'
+          'build/Masks.min.js': 'CustomLibraries/Masks/Masks.js',
+          'build/Validators.min.js': 'CustomLibraries/Validators/Validators.js'
         }
       }
     },

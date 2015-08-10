@@ -7,13 +7,14 @@
 	<script type="text/javascript" src="/Angular/angular.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/Style/common.css">
 	<script type="text/javascript" src="/JS/app.js"></script>
+	<script type="text/javascript" src="/ANIMATE/angular-animate.min.js"></script>
 	<script type="text/javascript" src="/JS/component-displayer.js"></script>
 	<link rel="stylesheet" type="text/css" href="/Style/component-displayer.css">
 	<script type="text/javascript" src="/MIN/Messages.min.js"></script>
 	<script type="text/javascript" src="/MIN/AccordionGroup.min.js"></script>
 	<script type="text/javascript" src="/JS/Masks.js"></script>
+	<script type="text/javascript" src="/MIN/Validators.min.js"></script>
 
-	<!--<script type="text/javascript" src="/LIB/Masks/Masks.js"></script>-->
 	<script type="text/javascript" src="/MIN/Masks.min.js"></script>
 
 
@@ -94,7 +95,7 @@
 			<input type="text" placeholder="ex: 87.030-240" ng-model="cep" class="form-control" cep-mask />
 			<p ng-show="cep && showBind">Valor amarrado ao cep: {{cep}}</p>
 
-			<input type="button" class="btn btn-primary btn-block" value="Mostrar valores vinculados" ng-model="showBind" ng-click="showBindToggle(showBind)" style="margin-top: 8px;" />			
+			<input type="button" class="btn btn-primary btn-block" value="Mostrar valores vinculados" ng-model="showBind" ng-click="showBindToggle(showBind)" />			
 		</div>
 	</component-displayer>
 </body>

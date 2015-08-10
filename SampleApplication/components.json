@@ -13,5 +13,10 @@
 		"title": "Masks", 
 		"description": "Máscaras para os campos mais utilizados.",
 		"htmlPage": "Masks.html"
+	},
+	{
+		"title": "Validators", 
+		"description": "Validações para os campos mais utilizados.",
+		"htmlPage": "Validators.html"
 	}
 ]

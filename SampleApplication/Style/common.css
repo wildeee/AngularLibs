@@ -22,3 +22,7 @@ label {
 select.form-control {
 	margin-bottom: 8px;
 }
+
+input {
+	margin-top: 8px;
+}
